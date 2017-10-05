@@ -28,29 +28,59 @@ namespace GoogleVisionDemo.Activities
         TextView _scannedText;
         CameraSource _cameraSource;
         BarcodeDetector _barcodeDetector;
+        Button _textRecogniserButton;
+        Button _flashButton;
         const int RequestCameraPermissionId = 1001;
         protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+        { 
+             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.BarcodeScannerLayout);
-            FindViews();
-            HandleEvents();
-            _barcodeDetector = new BarcodeDetector.Builder(this).SetBarcodeFormats(BarcodeFormat.QrCode).Build();
-            _cameraSource = new CameraSource.Builder(this, _barcodeDetector).SetRequestedPreviewSize(640, 480).Build();
+             SetContentView(Resource.Layout.BarcodeScannerLayout);
+             FindViews();
+             HandleEvents();
+      
+            _barcodeDetector = new BarcodeDetector.Builder(this).SetBarcodeFormats(BarcodeFormat.QrCode | BarcodeFormat.DataMatrix | BarcodeFormat.Codabar |BarcodeFormat.Code128 |BarcodeFormat.Code39 |BarcodeFormat.Code93 |BarcodeFormat.Ean13 |BarcodeFormat.Ean8 |BarcodeFormat.Itf|BarcodeFormat.Pdf417|BarcodeFormat.UpcA|BarcodeFormat.UpcE).Build();//setting specific barcode type
+        
+            _cameraSource = new CameraSource.Builder(this, _barcodeDetector).SetAutoFocusEnabled(true).SetRequestedPreviewSize(1000, 1000).Build();
+           
             _cameraPreview.Holder.AddCallback(this);
             _barcodeDetector.SetProcessor(this);
 
         }
+
+        
         void FindViews()
         {
             _cameraPreview = FindViewById<SurfaceView>(Resource.Id.cameraPreview);
            // _scanButton = FindViewById<Button>(Resource.Id.scanButton);
             _scannedText = FindViewById<TextView>(Resource.Id.scannedText);
+            _flashButton = FindViewById<Button>(Resource.Id.flashButton);
+            _textRecogniserButton = FindViewById<Button>(Resource.Id.textRecogniserButton);
         }
         void HandleEvents()
         {
-           // _scanButton.Click += _scanButton_Click;
+            _flashButton.Click += _flashButton_Click;
+            // _scanButton.Click += _scanButton_Click;
+            _textRecogniserButton.Click += _textRecogniserButton_Click;
+        }
+        bool _isFlashOn=false;
+        Camera _camera;
+        private void _flashButton_Click(object sender, EventArgs e)
+        {
+            if (_isFlashOn==false)
+            {
+               
+            }
+            else
+            {
+
+            }
+        }
+
+        private void _textRecogniserButton_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this,typeof(TextRecogniserActivity));
+            StartActivity(intent);
         }
 
         private void _scanButton_Click(object sender, EventArgs e)
@@ -89,7 +119,7 @@ namespace GoogleVisionDemo.Activities
         {
             _cameraSource.Stop();
         }
-
+       
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {

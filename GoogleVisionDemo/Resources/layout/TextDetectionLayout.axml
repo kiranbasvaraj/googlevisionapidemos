@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <LinearLayout 
+    android:layout_width="match_parent"
+               android:layout_height="match_parent"
+      android:orientation="vertical">
+    <ImageView android:id="@+id/TextDetectionImageView"
+               android:layout_height="1000dp"
+               android:layout_width="match_parent"
+               android:src="@drawable/slide5new"></ImageView>
+    <Button android:id="@+id/DetectButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Detect Text"></Button>
+    <TextView android:id="@+id/RecognisedTextLabel"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+              android:text="Detect Text"/>
+  </LinearLayout>
+</ScrollView>

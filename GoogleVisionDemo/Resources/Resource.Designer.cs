@@ -168,6 +168,15 @@ namespace GoogleVisionDemo
 			// aapt resource value: 0x7f020014
 			public const int common_google_signin_btn_text_light_pressed = 2130837524;
 			
+			// aapt resource value: 0x7f020015
+			public const int image = 2130837525;
+			
+			// aapt resource value: 0x7f020016
+			public const int slide5new = 2130837526;
+			
+			// aapt resource value: 0x7f020017
+			public const int textImage = 2130837527;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -180,6 +189,15 @@ namespace GoogleVisionDemo
 		
 		public partial class Id
 		{
+			
+			// aapt resource value: 0x7f07000e
+			public const int DetectButton = 2131165198;
+			
+			// aapt resource value: 0x7f07000f
+			public const int RecognisedTextLabel = 2131165199;
+			
+			// aapt resource value: 0x7f07000d
+			public const int TextDetectionImageView = 2131165197;
 			
 			// aapt resource value: 0x7f070000
 			public const int adjust_height = 2131165184;
@@ -196,6 +214,9 @@ namespace GoogleVisionDemo
 			// aapt resource value: 0x7f070007
 			public const int dark = 2131165191;
 			
+			// aapt resource value: 0x7f07000c
+			public const int flashButton = 2131165196;
+			
 			// aapt resource value: 0x7f070003
 			public const int icon_only = 2131165187;
 			
@@ -210,6 +231,9 @@ namespace GoogleVisionDemo
 			
 			// aapt resource value: 0x7f070004
 			public const int standard = 2131165188;
+			
+			// aapt resource value: 0x7f07000b
+			public const int textRecogniserButton = 2131165195;
 			
 			// aapt resource value: 0x7f070005
 			public const int wide = 2131165189;
@@ -247,7 +271,7 @@ namespace GoogleVisionDemo
 			public const int BarcodeScannerLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int TextDetectionLayout = 2130903041;
 			
 			static Layout()
 			{

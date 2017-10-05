@@ -12,7 +12,7 @@ namespace GoogleVisionDemo
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+          /// SetContentView(Resource.Layout.Main);
         }
     }
 }
